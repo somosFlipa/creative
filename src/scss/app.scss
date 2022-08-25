@@ -1,0 +1,297 @@
+$negro : #000;
+$blanco : #fff;
+$amarillo : #FFFE03;
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+@mixin Paragraph{
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.5rem;
+    font-family: 'Ubuntu', sans-serif;
+}
+@mixin xsHeadline1{
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-weight: 900;
+    font-family: 'Playfair Display', serif;
+}
+@mixin xsHeadline2{
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 900;
+    font-family: 'Playfair Display', serif;
+}
+@mixin desktopHeadline1{
+    font-size: 4rem;
+    line-height: 4.5rem;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+}
+@mixin desktopHeadline2{
+    font-size: 3rem;
+    line-height: 3.5rem;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+}
+@mixin boton{
+    padding: 12px 16px 12px 16px;
+    gap: 10px;
+    width: 312px;
+    height: 48px;
+    color: #FFFE03;
+    background: #000000;    
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 20px 20px 20px 0px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+}
+@mixin botonHover{
+    background: #FFFFFF;
+    color: #000;
+}
+@mixin card{
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    box-shadow: 8px 8px 0px #000000;
+    border-radius: 20px;
+    text-align: -webkit-center;
+    padding: 36px 0 36px 0;
+}
+
+body{
+    background-color: $amarillo;
+}
+p{
+    @include Paragraph()
+}
+
+.cards_card{
+    @include card();
+}
+button{
+    @include boton()
+}
+.body_home__general{
+    display: grid;
+}
+@media screen and (max-width:767px){
+    h5{
+        @include xsHeadline2();
+    }
+    .body_home__general{
+        grid-template-areas: "a a a a"
+        "b b b b"
+        "c c c c"
+        "d d d d"
+        ;
+        padding: 16px 16px 16px 16px;
+        column-gap: 16px;
+        grid-template-columns: repeat(4, 1fr);
+        .body_home__general-nav{
+            grid-area: a;
+            .nav_contenedor{
+                text-align: center;
+                width: 18em;
+                .nav_logo{
+                    margin: 10px 10px 10px 10px;
+                }
+                .nav_sections{
+                    display: none;
+                }
+            }
+
+        }
+        .body_home__general-header{
+            grid-area: b;
+            .header_contenedor{
+                width: 18em;
+                .header_title{
+                    margin-top: 36px;
+                h1{
+                    @include xsHeadline1()
+                }    
+                p{
+                    margin-top: 24px;
+                }                
+                }
+                .header_img{
+                    width: 18em;
+                    margin-top: 36px;
+                }
+
+            }
+        }
+        .body_home__general-main{
+            grid-area: c;
+            .main_contenedor{
+                .main_contenedor-cards{
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 48px;
+                    .cards_card{
+
+
+                        h5{
+                            @include xsHeadline2()
+                        }
+                        p{
+                            margin-top: 16px;
+                        }
+                    }
+                }
+            }
+            .main_contenedor-AboutUs{
+                margin-top: 36px;
+                .aboutUs_texto{
+                    p{
+                        margin-top: 24px;
+                        width: 18em;
+                    }
+                }
+                .aboutUs_img{
+                    margin-top: 36px;
+                }
+            }
+            .main_contenedor__Preguntas{
+                button{
+                    width: 13.25em;
+                }
+                .preguntas_texto{
+                    margin-top: 1.5em;
+                }
+                .preguntas_boton{
+                    margin-top: 1.5em;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+@media (min-width:768px) and (max-width:1439px){
+    h5{
+        @include xsHeadline2();
+    }
+    .body_home__general{
+        grid-template-areas: "a a a a a a a a"
+        "b b b b b b b b"
+        "c c c c c c c c"
+        "d d d d d d d d"
+        ;
+        padding: 16px 16px 16px 16px;
+        column-gap: 24px;
+        grid-template-columns: repeat(8, 1fr);
+        .body_home__general-nav{
+            grid-area: a;
+            .nav_contenedor{
+                display: grid;
+                grid-template-areas: ". aa aa . . . ab .";
+                column-gap: 24px;
+                grid-template-columns: repeat(8, 1fr);
+                .nav_logo{
+                    margin: 10px 10px 10px 10px;
+                    grid-area: aa;
+                }
+                .nav_sections{
+                    grid-area: ab;
+                    display: flex;
+                    gap: 24px;
+                }
+
+            }
+
+        }
+        .body_home__general-header{
+            grid-area: b;
+
+            .header_contenedor{
+                display: grid;
+                grid-template-areas: ". ba ba ba bb bb bb .";
+                column-gap: 24px;
+                grid-template-columns: repeat(8, 1fr);
+                height: 18em;
+                .header_title{
+                    margin-top: 48px;
+                    grid-area: ba;
+                h1{
+                    @include xsHeadline1()
+                }    
+                p{
+                    margin-top: 24px;
+                }                
+                }
+                .header_img{
+                    grid-area: bb;
+                }
+
+            }
+        }
+        .body_home__general-main{
+            grid-area: c;
+
+            .main_contenedor{
+                display: grid;
+                grid-template-areas: ". . ca ca ca ca . ."
+                ". cb cb cb cb cb cb ."
+                ". cc cc cc cc cc cc .";
+                column-gap: 24px;
+                grid-template-columns: repeat(8, 1fr);
+                .main_contenedor-cards{
+                    grid-area: ca;
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 48px;
+                    .cards_card{
+
+
+                        h5{
+                            @include xsHeadline2()
+                        }
+                        p{
+                            margin-top: 16px;
+                        }
+                    }
+                }
+            }
+            .main_contenedor-AboutUs{
+                grid-area: cb;
+                margin-top: 48px;
+                display: grid;
+                grid-template-areas: 
+                "cb1  cb1 cb1 cb2 cb2 cb2";
+                column-gap: 24px;
+                grid-template-columns: repeat(6, 1fr);
+                .aboutUs_texto{
+                    grid-area: cb1;
+                    p{
+                        margin-top: 24px;
+                        width: 18em;
+                    }
+                }
+                .aboutUs_img{
+                    grid-area: cb2;
+
+
+                }
+            }
+            .main_contenedor__Preguntas{
+                grid-area: cc;
+                button{
+                    width: 13.25em;
+                }
+                .preguntas_texto{
+                    margin-top: 48px;
+                }
+                .preguntas_boton{
+                    margin-top: 48px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
