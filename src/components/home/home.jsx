@@ -1,6 +1,9 @@
 import React from "react";
 import Phones from '../../assets/phone.svg';
-import Family from '../../assets/family.svg'
+import Family from '../../assets/family.svg';
+import Facebook from '../../assets/facebook.svg';
+import Instagram from '../../assets/instagram.svg';
+import Email from '../../assets/email.svg';
 
 
 const Home = () =>{
@@ -72,9 +75,13 @@ const Home = () =>{
                 </div>
                 <div className="body_home__general-footer">
                     <div className="footer_icons">
-
+                        <a href=""><img src={Facebook} alt="facebook" /></a>
+                        <a href=""><img src={Instagram} alt="instagram" /></a>
+                        <a href=""><img src={Email} alt="email" /></a>
                     </div>
                     <div className="footer_texto">
+                        <p>Somos <a href="#">FLIPA</a> -</p>
+                        <p>Todos los Derechos Reservados</p>
 
                     </div>
                 </div>

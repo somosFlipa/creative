@@ -50,6 +50,7 @@ $amarillo : #FFFE03;
     font-family: 'Ubuntu', sans-serif;
     font-weight: 900;
     font-size: 20px;
+    border: none;
 }
 @mixin botonHover{
     background: #FFFFFF;
@@ -97,7 +98,6 @@ button{
             grid-area: a;
             .nav_contenedor{
                 text-align: center;
-                width: 18em;
                 .nav_logo{
                     margin: 10px 10px 10px 10px;
                 }
@@ -110,11 +110,12 @@ button{
         .body_home__general-header{
             grid-area: b;
             .header_contenedor{
-                width: 18em;
                 .header_title{
                     margin-top: 36px;
                 h1{
-                    @include xsHeadline1()
+                    @include xsHeadline1();
+                    margin-right: 10%;
+                    
                 }    
                 p{
                     margin-top: 24px;
@@ -123,6 +124,9 @@ button{
                 .header_img{
                     width: 18em;
                     margin-top: 36px;
+                    img{
+                        width: 18em;
+                    }
                 }
 
             }
@@ -156,6 +160,7 @@ button{
                 }
                 .aboutUs_img{
                     margin-top: 36px;
+                    text-align: center;
                 }
             }
             .main_contenedor__Preguntas{
@@ -171,6 +176,26 @@ button{
                 }
             }
         }
+        .body_home__general-footer{
+            grid-area: d;
+            margin-top: 36px;
+            padding-top: 47px;
+            text-align: center;
+            place-self: center;
+            .footer_icons{
+                display: flex;
+                justify-content: space-evenly;
+            }
+            .footer_texto{
+                margin-top: 24px;
+                a{
+                    text-decoration: none;
+                    font-weight: 700;
+                    color: #FF2CDF;
+                }
+            }
+        }
+        padding-bottom: 500px;
     }
 }
 @media (min-width:768px) and (max-width:1439px){
@@ -179,7 +204,7 @@ button{
     }
     .body_home__general{
         grid-template-areas: "a a a a a a a a"
-        "b b b b b b b b"
+        ". b b b b b b ."
         "c c c c c c c c"
         "d d d d d d d d"
         ;
@@ -208,18 +233,19 @@ button{
         }
         .body_home__general-header{
             grid-area: b;
-
+            width: 34.063em;
             .header_contenedor{
                 display: grid;
-                grid-template-areas: ". ba ba ba bb bb bb .";
+                grid-template-areas: " ba ba ba bb bb bb ";
                 column-gap: 24px;
-                grid-template-columns: repeat(8, 1fr);
+                grid-template-columns: repeat(6, 1fr);
                 height: 18em;
                 .header_title{
                     margin-top: 48px;
                     grid-area: ba;
                 h1{
-                    @include xsHeadline1()
+                    @include xsHeadline1();
+                    margin-right: 10%;
                 }    
                 p{
                     margin-top: 24px;
@@ -227,6 +253,9 @@ button{
                 }
                 .header_img{
                     grid-area: bb;
+                    img{
+                        width: 16.313em;
+                    }
                 }
 
             }
@@ -290,6 +319,325 @@ button{
                 .preguntas_boton{
                     margin-top: 48px;
                     text-align: center;
+                }
+            }
+        }
+        .body_home__general-footer{
+            grid-area: d;
+            margin-top: 36px;
+            padding-top: 47px;
+            text-align: center;
+            place-self: center;
+            .footer_icons{
+                display: flex;
+                justify-content: space-evenly;
+            }
+            .footer_texto{
+                margin-top: 24px;
+                a{
+                    text-decoration: none;
+                    font-weight: 700;
+                    color: #FF2CDF;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 1440px) and (max-width: 1919px){
+    h5{
+        @include desktopHeadline2()
+    }
+    .body_home__general{
+        grid-template-areas: "a a a a a a a a a a a a"
+        ". b b b b b b b b b b ."
+        "c c c c c c c c c c c c"
+        "d d d d d d d d d d d d"
+        ;
+        padding: 24px 60px 24px 60px;
+        column-gap: 24px;
+        grid-template-columns: repeat(12, 1fr);
+        .body_home__general-nav{
+            grid-area: a;
+            .nav_contenedor{
+                display: grid;
+                grid-template-areas: ". aa aa aa . . . . . ab . .";
+                column-gap: 24px;
+                grid-template-columns: repeat(12, 1fr);
+                .nav_logo{
+                    margin: 10px 10px 10px 10px;
+                    grid-area: aa;
+                }
+                .nav_sections{
+                    grid-area: ab;
+                    display: flex;
+                    gap: 24px;
+                }
+
+            }
+        }
+        .body_home__general-header{
+            grid-area: b;
+            margin-top: 48px;
+
+            .header_contenedor{
+                display: grid;
+                grid-template-areas: " ba ba ba ba ba bb bb bb bb bb ";
+                column-gap: 24px;
+                grid-template-columns: repeat(10, 1fr);
+
+                .header_title{
+                    margin-top: 48px;
+                    grid-area: ba;
+                    width: 40.375em;
+                h1{
+                    @include desktopHeadline1();
+                    margin-right: 10%;
+                    
+                }    
+                p{
+                    margin-top: 24px;
+                }                
+                }
+                .header_img{
+                    grid-area: bb;
+                    img{
+                        width: 26.375em;
+                    }
+                }
+
+            }
+        }
+        .body_home__general-main{
+            grid-area: c;
+            margin-top: 48px;
+            .main_contenedor{
+                display: grid;
+                grid-template-areas: ". ca ca ca ca ca ca ca ca ca ca ."
+                ". cb cb cb cb cb cb cb cb cb cb  ."
+                ". cc cc cc cc cc cc cc cc cc cc .";
+                column-gap: 24px;
+                grid-template-columns: repeat(12, 1fr);
+                .main_contenedor-cards{
+                    grid-area: ca;
+                    display: flex;
+
+                    gap:48px;
+                    .cards_card{
+                        p{
+                            margin-top: 16px;
+                        }
+                    }
+                }
+            }
+            .main_contenedor-AboutUs{
+                grid-area: cb;
+                margin-top: 48px;
+                display: grid;
+                grid-template-areas: 
+                " cb1 cb1 cb1  cb1 cb1  cb2 cb2 cb2 cb2 cb2 ";
+                column-gap: 24px;
+                grid-template-columns: repeat(10, 1fr);
+                .aboutUs_texto{
+                    grid-area: cb1;
+                    margin-top: 104px;
+                    margin-bottom: 104px;
+                    margin-left: 142px;
+                    p{
+                        margin-top: 24px;
+
+                    }
+                }
+                .aboutUs_img{
+                    grid-area: cb2;
+                    margin-right: 142px;
+                    img{
+                        width: 22.813em;
+                    }
+
+                }
+            }
+            .main_contenedor__Preguntas{
+                grid-area: cc;
+                justify-content: space-around;
+                display: flex;
+                button{
+                    width: 13.25em;
+                }
+                .preguntas_texto{
+                    margin-top: 48px;
+                }
+                .preguntas_boton{
+                    margin-top: 48px;
+                    text-align: center;
+                }
+            }
+        }
+        .body_home__general-footer{
+            grid-area: d;
+            margin-top: 36px;
+            padding-top: 47px;
+            text-align: center;
+            place-self: center;
+            .footer_icons{
+                display: flex;
+                justify-content: space-evenly;
+            }
+            .footer_texto{
+                margin-top: 24px;
+                a{
+                    text-decoration: none;
+                    font-weight: 700;
+                    color: #FF2CDF;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 1920px){
+    h5{
+        @include desktopHeadline2()
+    }
+    .body_home__general{
+        grid-template-areas: "a a a a a a a a a a a a"
+        ". b b b b b b b b b b ."
+        "c c c c c c c c c c c c"
+        "d d d d d d d d d d d d"
+        ;
+        padding: 24px 240px 24px 240px;
+        column-gap: 24px;
+        grid-template-columns: repeat(12, 1fr);
+        .body_home__general-nav{
+            grid-area: a;
+            .nav_contenedor{
+                display: grid;
+                grid-template-areas: ". aa aa aa . . . . . ab . .";
+                column-gap: 24px;
+                grid-template-columns: repeat(12, 1fr);
+                .nav_logo{
+                    margin: 10px 10px 10px 10px;
+                    grid-area: aa;
+                }
+                .nav_sections{
+                    grid-area: ab;
+                    display: flex;
+                    gap: 24px;
+                }
+
+            }
+        }
+        .body_home__general-header{
+            grid-area: b;
+            margin-top: 48px;
+            width: 68.25em;
+            .header_contenedor{
+                display: grid;
+                grid-template-areas: " ba ba ba ba ba bb bb bb bb bb ";
+                column-gap: 24px;
+                grid-template-columns: repeat(10, 1fr);
+
+                .header_title{
+                    margin-top: 48px;
+                    grid-area: ba;
+                    width: 40.375em;
+                h1{
+                    @include desktopHeadline1();
+                    margin-right: 10%;
+                    
+                }    
+                p{
+                    margin-top: 24px;
+                }                
+                }
+                .header_img{
+                    grid-area: bb;
+                    img{
+                        width: 26.375em;
+                    }
+                }
+
+            }
+        }
+        .body_home__general-main{
+            grid-area: c;
+            margin-top: 48px;
+            .main_contenedor{
+                display: grid;
+                grid-template-areas: ". ca ca ca ca ca ca ca ca ca ca ."
+                ". cb cb cb cb cb cb cb cb cb cb  ."
+                ". cc cc cc cc cc cc cc cc cc cc .";
+                column-gap: 24px;
+                grid-template-columns: repeat(12, 1fr);
+                .main_contenedor-cards{
+                    grid-area: ca;
+                    display: flex;
+
+                    gap:48px;
+                    .cards_card{
+                        p{
+                            margin-top: 16px;
+                        }
+                    }
+                }
+            }
+            .main_contenedor-AboutUs{
+                grid-area: cb;
+                margin-top: 48px;
+                display: grid;
+                grid-template-areas: 
+                " cb1 cb1 cb1  cb1 cb1  cb2 cb2 cb2 cb2 cb2 ";
+                column-gap: 24px;
+                grid-template-columns: repeat(10, 1fr);
+                .aboutUs_texto{
+                    grid-area: cb1;
+                    margin-top: 104px;
+                    margin-bottom: 104px;
+                    margin-left: 142px;
+                    p{
+                        margin-top: 24px;
+
+                    }
+                }
+                .aboutUs_img{
+                    grid-area: cb2;
+                    margin-right: 142px;
+                    img{
+                        width: 22.813em;
+                    }
+
+                }
+            }
+            .main_contenedor__Preguntas{
+                grid-area: cc;
+                justify-content: space-around;
+                display: flex;
+                button{
+                    width: 13.25em;
+                }
+                .preguntas_texto{
+                    margin-top: 48px;
+                }
+                .preguntas_boton{
+                    margin-top: 48px;
+                    text-align: center;
+                }
+            }
+        }
+        .body_home__general-footer{
+            grid-area: d;
+            margin-top: 36px;
+            padding-top: 47px;
+            text-align: center;
+            place-self: center;
+            .footer_icons{
+                display: flex;
+                justify-content: space-evenly;
+            }
+            .footer_texto{
+                margin-top: 24px;
+                a{
+                    text-decoration: none;
+                    font-weight: 700;
+                    color: #FF2CDF;
                 }
             }
         }
