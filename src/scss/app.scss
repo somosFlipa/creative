@@ -204,7 +204,7 @@ button{
     }
     .body_home__general{
         grid-template-areas: "a a a a a a a a"
-        ". b b b b b b ."
+        "b b b b b b b b"
         "c c c c c c c c"
         "d d d d d d d d"
         ;
@@ -233,16 +233,17 @@ button{
         }
         .body_home__general-header{
             grid-area: b;
-            width: 34.063em;
+
             .header_contenedor{
                 display: grid;
-                grid-template-areas: " ba ba ba bb bb bb ";
+                grid-template-areas: "ba ba ba ba bb bb bb bb";
                 column-gap: 24px;
-                grid-template-columns: repeat(6, 1fr);
+                grid-template-columns: repeat(8, 1fr);
                 height: 18em;
                 .header_title{
                     margin-top: 48px;
                     grid-area: ba;
+                    margin-left: 111.5px;
                 h1{
                     @include xsHeadline1();
                     margin-right: 10%;
@@ -253,6 +254,7 @@ button{
                 }
                 .header_img{
                     grid-area: bb;
+                    margin-right: 111.5px;
                     img{
                         width: 16.313em;
                     }
@@ -348,7 +350,7 @@ button{
         @include desktopHeadline2()
     }
     .body_home__general{
-        grid-template-areas: "a a a a a a a a a a a a"
+        grid-template-areas: ". a a a a a a a a a a ."
         ". b b b b b b b b b b ."
         "c c c c c c c c c c c c"
         "d d d d d d d d d d d d"
@@ -360,9 +362,9 @@ button{
             grid-area: a;
             .nav_contenedor{
                 display: grid;
-                grid-template-areas: ". aa aa aa . . . . . ab . .";
+                grid-template-areas: "aa aa aa aa aa . . . ab ab ";
                 column-gap: 24px;
-                grid-template-columns: repeat(12, 1fr);
+                grid-template-columns: repeat(10, 1fr);
                 .nav_logo{
                     margin: 10px 10px 10px 10px;
                     grid-area: aa;
